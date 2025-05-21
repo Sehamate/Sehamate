@@ -4,7 +4,7 @@ import 'package:sehamate/core/utils/extensions.dart';
 import 'package:sehamate/core/widgets/custom_button.dart';
 import 'package:sehamate/core/widgets/custom_date_picker.dart';
 import 'package:sehamate/core/widgets/custom_text_field.dart';
-import 'package:sehamate/features/auth/presentation/views/widgets/login%20view/login_view_body.dart';
+import 'package:sehamate/core/widgets/decorated_upper_box.dart';
 
 class RegisterViewBody extends StatelessWidget {
   final int userType;
@@ -12,27 +12,9 @@ class RegisterViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(userType);
     return Column(
       children: [
-        Container(
-          height: 144,
-          width: double.maxFinite,
-          decoration: BoxDecoration(
-            color: context.colors.primary,
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(56),
-              bottomRight: Radius.circular(56),
-            ),
-            gradient: LinearGradient(
-              colors: [
-                context.colors.primary,
-                context.colors.primary.withValues(alpha: 0.6),
-                context.colors.primary.withValues(alpha: 0.1),
-              ],
-            ),
-          ),
-        ),
+        DecoratedUpperBox(),
         SizedBox(height: 30),
         Expanded(
           child: Padding(

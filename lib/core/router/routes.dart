@@ -15,4 +15,8 @@ abstract class Routes {
   static final String helpCenterView = '/helpCenterView';
   static final String doctorProfileView = '/doctorProfileView';
   static final String doctorSettingsView = '/doctorSettingsView';
+  static final String resetPasswordView = '/resetPasswordView';
+  static final String changePasswordView = '/changePasswordView';
+  static final String medicalTipsDetailsView = '/medicalTipsDetailsView';
+  static final String firstAidView = '/firstAidView';
 }

@@ -3,18 +3,22 @@ import 'package:sehamate/core/router/routes.dart';
 import 'package:sehamate/features/auth/presentation/views/about_patient_view.dart';
 import 'package:sehamate/features/auth/presentation/views/login_view.dart';
 import 'package:sehamate/features/auth/presentation/views/register_view.dart';
+import 'package:sehamate/features/auth/presentation/views/reset_password_view.dart';
 import 'package:sehamate/features/auth/presentation/views/start_view.dart';
 import 'package:sehamate/features/chats/presentation/views/doctor/doctor_chat_view.dart';
 import 'package:sehamate/features/chats/presentation/views/patient/patient_chat_view.dart';
 import 'package:sehamate/features/emergency/presentation/views/emergency_view.dart';
+import 'package:sehamate/features/emergency/presentation/views/first_aid_view.dart';
 import 'package:sehamate/features/home/presentation/views/doctor/doctor_home_view.dart';
 import 'package:sehamate/features/home/presentation/views/patient/patient_home_view.dart';
 import 'package:sehamate/features/layout/presentation/views/doctor/doctor_layout_view.dart';
 import 'package:sehamate/features/layout/presentation/views/patient/patient_layout_view.dart';
+import 'package:sehamate/features/medical%20tips/presentation/medical_tips_details_view.dart';
 import 'package:sehamate/features/medical%20tips/presentation/medical_tips_view.dart';
 import 'package:sehamate/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:sehamate/features/profile/presentation/views/doctor_profile_view.dart';
 import 'package:sehamate/features/profile/presentation/views/patient_profile_view.dart';
+import 'package:sehamate/features/settings/presentation/views/patient/change_password_view.dart';
 import 'package:sehamate/features/settings/presentation/views/patient/help_center_view.dart';
 import 'package:sehamate/features/settings/presentation/views/patient/notifications_settings_view.dart';
 import 'package:sehamate/features/settings/presentation/views/patient/setting_view.dart';
@@ -33,6 +37,10 @@ abstract class AppRouter {
       GoRoute(
         path: Routes.registerView,
         builder: (context, state) => RegisterView(userType: state.extra as int),
+      ),
+      GoRoute(
+        path: Routes.resetPasswordView,
+        builder: (context, state) => ResetPasswordView(),
       ),
       GoRoute(
         path: Routes.moreAboutView,
@@ -99,6 +107,18 @@ abstract class AppRouter {
       GoRoute(
         path: Routes.helpCenterView,
         builder: (context, state) => HelpCenterView(),
+      ),
+      GoRoute(
+        path: Routes.changePasswordView,
+        builder: (context, state) => ChangePasswordView(),
+      ),
+      GoRoute(
+        path: Routes.medicalTipsDetailsView,
+        builder: (context, state) => MedicalTipsDetailsView(),
+      ),
+      GoRoute(
+        path: Routes.firstAidView,
+        builder: (context, state) => FirstAidView(),
       ),
     ],
   );

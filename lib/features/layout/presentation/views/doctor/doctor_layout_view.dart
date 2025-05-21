@@ -11,10 +11,11 @@ class DoctorLayoutView extends StatefulWidget {
 }
 
 class _DoctorLayoutViewState extends State<DoctorLayoutView> {
-  int currentIndex = 0;
+  int currentIndex = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xffF5EDFC),
       bottomNavigationBar: Container(
         clipBehavior: Clip.hardEdge,

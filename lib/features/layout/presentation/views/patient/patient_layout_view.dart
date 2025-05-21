@@ -13,10 +13,11 @@ class PatientLayoutView extends StatefulWidget {
 }
 
 class _PatientLayoutViewState extends State<PatientLayoutView> {
-  int currentIndex = 0;
+  int currentIndex = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xffF7F2FD),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(

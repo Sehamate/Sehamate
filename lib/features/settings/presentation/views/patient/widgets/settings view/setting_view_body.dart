@@ -83,7 +83,9 @@ class SettingViewBody extends StatelessWidget {
             ),
             SizedBox(height: 16),
             SettingsItem(
-              onTap: () {},
+              onTap: () {
+                context.router.push(Routes.changePasswordView);
+              },
               title: "Privacy & Security",
               subtitle: "Change password",
               icon: Icons.lock,

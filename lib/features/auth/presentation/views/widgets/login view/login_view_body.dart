@@ -3,6 +3,7 @@ import 'package:sehamate/core/router/routes.dart';
 import 'package:sehamate/core/utils/extensions.dart';
 import 'package:sehamate/core/widgets/custom_button.dart';
 import 'package:sehamate/core/widgets/custom_text_field.dart';
+import 'package:sehamate/core/widgets/decorated_upper_box.dart';
 
 class LoginViewBody extends StatelessWidget {
   final int userType;
@@ -12,24 +13,7 @@ class LoginViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          height: 144,
-          width: double.maxFinite,
-          decoration: BoxDecoration(
-            color: context.colors.primary,
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(56),
-              bottomRight: Radius.circular(56),
-            ),
-            gradient: LinearGradient(
-              colors: [
-                context.colors.primary,
-                context.colors.primary.withValues(alpha: 0.6),
-                context.colors.primary.withValues(alpha: 0.1),
-              ],
-            ),
-          ),
-        ),
+        DecoratedUpperBox(),
         SizedBox(height: 30),
         Padding(
           padding: EdgeInsets.all(16),
@@ -72,15 +56,20 @@ class LoginViewBody extends StatelessWidget {
               SizedBox(height: 10),
               Align(
                 alignment: Alignment.centerRight,
-                child: Text("Forgot Password?", style: TextStyle(color: Colors.black)),
+                child: GestureDetector(
+                  onTap: () {
+                    context.router.push(Routes.resetPasswordView);
+                  },
+                  child: Text("Forgot Password?", style: TextStyle(color: Colors.black)),
+                ),
               ),
               SizedBox(height: 16),
               CustomButton(
                 height: 45,
                 text: "Login",
                 onPressed: () {
-                  if (userType == 0) context.router.go(Routes.doctorHomeView);
-                  if (userType == 1) context.router.go(Routes.patientHomeView);
+                  if (userType == 0) context.router.go(Routes.doctorChatView);
+                  if (userType == 1) context.router.go(Routes.patientChatView);
                 },
               ),
               SizedBox(height: 16),
