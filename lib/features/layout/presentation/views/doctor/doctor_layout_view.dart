@@ -11,7 +11,7 @@ class DoctorLayoutView extends StatefulWidget {
 }
 
 class _DoctorLayoutViewState extends State<DoctorLayoutView> {
-  int currentIndex = 1;
+  String get currentView => context.router.routerDelegate.currentConfiguration.uri.toString();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,49 +36,49 @@ class _DoctorLayoutViewState extends State<DoctorLayoutView> {
             children: [
               GestureDetector(
                 onTap: () {
-                  currentIndex = 0;
-                  setState(() {});
                   context.router.go(Routes.doctorHomeView);
                 },
                 child: Image.asset(
                   'assets/icons/home.png',
-                  color: context.colors.primary.withValues(alpha: currentIndex == 0 ? 1 : 0.4),
+                  color: context.colors.primary.withValues(
+                    alpha: currentView == Routes.doctorHomeView ? 1 : 0.4,
+                  ),
                   height: 24,
                 ),
               ),
               GestureDetector(
                 onTap: () {
-                  currentIndex = 1;
-                  setState(() {});
                   context.router.go(Routes.doctorChatView);
                 },
                 child: Image.asset(
                   'assets/icons/chat.png',
-                  color: context.colors.primary.withValues(alpha: currentIndex == 1 ? 1 : 0.4),
+                  color: context.colors.primary.withValues(
+                    alpha: currentView == Routes.doctorChatView ? 1 : 0.4,
+                  ),
                   height: 24,
                 ),
               ),
               GestureDetector(
                 onTap: () {
-                  currentIndex = 2;
-                  setState(() {});
                   context.router.go(Routes.doctorProfileView);
                 },
                 child: Image.asset(
                   'assets/icons/profile.png',
-                  color: context.colors.primary.withValues(alpha: currentIndex == 2 ? 1 : 0.4),
+                  color: context.colors.primary.withValues(
+                    alpha: currentView == Routes.doctorProfileView ? 1 : 0.4,
+                  ),
                   height: 24,
                 ),
               ),
               GestureDetector(
                 onTap: () {
-                  currentIndex = 3;
-                  setState(() {});
                   context.router.go(Routes.doctorSettingsView);
                 },
                 child: Image.asset(
                   'assets/icons/setting.png',
-                  color: context.colors.primary.withValues(alpha: currentIndex == 3 ? 1 : 0.4),
+                  color: context.colors.primary.withValues(
+                    alpha: currentView == Routes.doctorSettingsView ? 1 : 0.4,
+                  ),
                   height: 24,
                 ),
               ),

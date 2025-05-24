@@ -15,7 +15,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Container(
       padding: EdgeInsets.all(16),
       width: double.maxFinite,
-      height: 90,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
@@ -62,5 +61,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(90);
+  Size get preferredSize => Size.fromHeight(200);
 }

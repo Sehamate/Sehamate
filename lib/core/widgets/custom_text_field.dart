@@ -3,6 +3,7 @@ import 'package:sehamate/core/utils/extensions.dart';
 
 class CustomTextField extends StatefulWidget {
   final String hint;
+  final TextEditingController? controller;
   final bool? obscure;
   final IconData? icon;
   const CustomTextField({
@@ -10,6 +11,7 @@ class CustomTextField extends StatefulWidget {
     required this.hint,
     this.obscure = false,
     this.icon,
+    this.controller,
   });
 
   @override
@@ -21,6 +23,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: widget.controller,
       obscureText: widget.obscure! && !showPassword,
       style: TextStyle(color: context.colors.primary),
       decoration: InputDecoration(

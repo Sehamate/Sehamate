@@ -1,0 +1,2 @@
+D:/Development/Flutter/Projects/infosas/Sehamate2/android/app/.cxx/RelWithDebInfo/116gz3c6/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/Development/Flutter/Projects/infosas/Sehamate2/android/app/.cxx/RelWithDebInfo/116gz3c6/arm64-v8a/CMakeFiles/rebuild_cache.dir

@@ -19,4 +19,6 @@ abstract class Routes {
   static final String changePasswordView = '/changePasswordView';
   static final String medicalTipsDetailsView = '/medicalTipsDetailsView';
   static final String firstAidView = '/firstAidView';
+  static final String privacyPolicyView = '/privacyPolicyView';
+  static final String termsAndServicesView = '/termsAndServicesView';
 }

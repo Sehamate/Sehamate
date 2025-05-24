@@ -109,13 +109,17 @@ class SettingViewBody extends StatelessWidget {
             ),
             SizedBox(height: 16),
             SettingsItem(
-              onTap: () {},
+              onTap: () {
+                context.router.push(Routes.termsAndServicesView);
+              },
               title: "Terms & Services",
               icon: Icons.help,
             ),
             SizedBox(height: 16),
             SettingsItem(
-              onTap: () {},
+              onTap: () {
+                context.router.push(Routes.privacyPolicyView);
+              },
               title: "Privacy Policy",
               icon: Icons.shield,
             ),
@@ -125,7 +129,9 @@ class SettingViewBody extends StatelessWidget {
               foregroundColor: context.colors.primary,
               border: Border.all(color: context.colors.primary),
               text: "Logout",
-              onPressed: () {},
+              onPressed: () {
+                context.router.push(Routes.termsAndServicesView);
+              },
             ),
           ],
         ),

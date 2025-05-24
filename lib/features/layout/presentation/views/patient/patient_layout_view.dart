@@ -3,6 +3,7 @@ import 'package:sehamate/core/router/routes.dart';
 import 'package:sehamate/core/utils/extensions.dart';
 
 import 'widgets/more_bottom_sheet.dart';
+import 'widgets/patient_home_bottom_sheet.dart';
 
 class PatientLayoutView extends StatefulWidget {
   final Widget child;
@@ -13,7 +14,7 @@ class PatientLayoutView extends StatefulWidget {
 }
 
 class _PatientLayoutViewState extends State<PatientLayoutView> {
-  int currentIndex = 1;
+  String get currentView => context.router.routerDelegate.currentConfiguration.uri.toString();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +24,12 @@ class _PatientLayoutViewState extends State<PatientLayoutView> {
       floatingActionButton: FloatingActionButton(
         shape: CircleBorder(),
         child: Icon(Icons.add, size: 27),
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            builder: (context) => PatientHomeBottomSheet(),
+          );
+        },
       ),
       bottomNavigationBar: Container(
         clipBehavior: Clip.hardEdge,
@@ -45,42 +51,36 @@ class _PatientLayoutViewState extends State<PatientLayoutView> {
             children: [
               GestureDetector(
                 onTap: () {
-                  currentIndex = 0;
-                  setState(() {});
                   context.router.go(Routes.patientHomeView);
                 },
                 child: Image.asset(
                   'assets/icons/home.png',
                   color: context.colors.primary.withValues(
-                    alpha: currentIndex == 0 ? 1 : 0.3,
+                    alpha: currentView == Routes.patientHomeView ? 1 : 0.3,
                   ),
                   height: 24,
                 ),
               ),
               GestureDetector(
                 onTap: () {
-                  currentIndex = 1;
-                  setState(() {});
                   context.router.go(Routes.patientChatView);
                 },
                 child: Image.asset(
                   'assets/icons/chat.png',
                   color: context.colors.primary.withValues(
-                    alpha: currentIndex == 1 ? 1 : 0.3,
+                    alpha: currentView == Routes.patientChatView ? 1 : 0.3,
                   ),
                   height: 24,
                 ),
               ),
               GestureDetector(
                 onTap: () {
-                  currentIndex = 2;
-                  setState(() {});
                   context.router.go(Routes.emergencyView);
                 },
                 child: Image.asset(
                   'assets/icons/lighting.png',
                   color: context.colors.primary.withValues(
-                    alpha: currentIndex == 2 ? 1 : 0.3,
+                    alpha: currentView == Routes.emergencyView ? 1 : 0.3,
                   ),
                   height: 24,
                 ),
@@ -95,7 +95,7 @@ class _PatientLayoutViewState extends State<PatientLayoutView> {
                 child: Image.asset(
                   'assets/icons/more.png',
                   color: context.colors.primary.withValues(
-                    alpha: currentIndex == 3 ? 1 : 0.3,
+                    alpha: 0.3,
                   ),
                   height: 24,
                 ),

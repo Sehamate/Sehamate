@@ -22,6 +22,8 @@ import 'package:sehamate/features/settings/presentation/views/patient/change_pas
 import 'package:sehamate/features/settings/presentation/views/patient/help_center_view.dart';
 import 'package:sehamate/features/settings/presentation/views/patient/notifications_settings_view.dart';
 import 'package:sehamate/features/settings/presentation/views/patient/setting_view.dart';
+import 'package:sehamate/features/settings/presentation/views/patient/privacy_policy_view.dart';
+import 'package:sehamate/features/settings/presentation/views/patient/terms_services_view.dart';
 
 abstract class AppRouter {
   static final router = GoRouter(
@@ -119,6 +121,14 @@ abstract class AppRouter {
       GoRoute(
         path: Routes.firstAidView,
         builder: (context, state) => FirstAidView(),
+      ),
+      GoRoute(
+        path: Routes.privacyPolicyView,
+        builder: (context, state) => PrivacyPolicyView(),
+      ),
+      GoRoute(
+        path: Routes.termsAndServicesView,
+        builder: (context, state) => TermsServicesView(),
       ),
     ],
   );

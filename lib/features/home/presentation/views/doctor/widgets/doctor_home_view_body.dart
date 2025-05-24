@@ -31,7 +31,7 @@ class DoctorHomeViewBody extends StatelessWidget {
           CustomButton(
             text: "Start Chat",
             onPressed: () {
-              context.router.go(Routes.patientChatView);
+              context.router.go(Routes.doctorChatView);
             },
           ),
           SizedBox(height: 32),
