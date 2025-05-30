@@ -4,10 +4,12 @@ import 'package:sehamate/core/utils/extensions.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final bool? canBack;
+  final Widget? action;
   const CustomAppBar({
     super.key,
     required this.title,
     this.canBack = false,
+    this.action,
   });
 
   @override
@@ -53,7 +55,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               title,
               style: context.texts.titleMedium,
             ),
-            if (canBack!) Spacer(),
+            if (canBack! || action != null) Spacer(),
+            if (action != null) action!,
           ],
         ),
       ),

@@ -124,16 +124,26 @@ class _StartViewBodyState extends State<StartViewBody> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       spacing: 20,
                       children: [
-                        Text(
-                          "Terms and Conditions",
-                          style: context.texts.bodySmall!.copyWith(
-                            color: Colors.grey.shade500,
+                        GestureDetector(
+                          onTap: () {
+                            context.router.push(Routes.termsAndServicesView);
+                          },
+                          child: Text(
+                            "Terms and Conditions",
+                            style: context.texts.bodySmall!.copyWith(
+                              color: Colors.grey.shade500,
+                            ),
                           ),
                         ),
-                        Text(
-                          "Privacy Policy",
-                          style: context.texts.bodySmall!.copyWith(
-                            color: Colors.grey.shade500,
+                        GestureDetector(
+                          onTap: () {
+                            context.router.push(Routes.privacyPolicyView);
+                          },
+                          child: Text(
+                            "Privacy Policy",
+                            style: context.texts.bodySmall!.copyWith(
+                              color: Colors.grey.shade500,
+                            ),
                           ),
                         ),
                       ],

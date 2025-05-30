@@ -5,13 +5,17 @@ class CustomTextField extends StatefulWidget {
   final String hint;
   final TextEditingController? controller;
   final bool? obscure;
+  final bool? autoFocus;
   final IconData? icon;
+  final int? maxLines;
   const CustomTextField({
     super.key,
     required this.hint,
     this.obscure = false,
     this.icon,
     this.controller,
+    this.maxLines = 1,
+    this.autoFocus = false,
   });
 
   @override
@@ -25,6 +29,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return TextFormField(
       controller: widget.controller,
       obscureText: widget.obscure! && !showPassword,
+      maxLines: widget.maxLines,
+      autofocus: widget.autoFocus!,
       style: TextStyle(color: context.colors.primary),
       decoration: InputDecoration(
         hintText: widget.hint,

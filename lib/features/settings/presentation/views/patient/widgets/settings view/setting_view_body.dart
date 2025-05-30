@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:sehamate/core/router/routes.dart';
 import 'package:sehamate/core/utils/extensions.dart';
 import 'package:sehamate/core/widgets/custom_button.dart';
-
 import 'settings_item.dart';
 
 class SettingViewBody extends StatelessWidget {
@@ -130,7 +129,7 @@ class SettingViewBody extends StatelessWidget {
               border: Border.all(color: context.colors.primary),
               text: "Logout",
               onPressed: () {
-                context.router.push(Routes.termsAndServicesView);
+                context.router.go(Routes.loginView, extra: 1);
               },
             ),
           ],

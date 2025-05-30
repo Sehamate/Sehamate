@@ -7,7 +7,6 @@ import 'package:sehamate/core/widgets/custom_text_field.dart';
 class AboutPatientViewBody extends StatefulWidget {
   final int userType;
   const AboutPatientViewBody({super.key, required this.userType});
-
   @override
   State<AboutPatientViewBody> createState() => _AboutPatientViewBodyState();
 }
@@ -48,7 +47,6 @@ class _AboutPatientViewBodyState extends State<AboutPatientViewBody> {
       controller: TextEditingController(),
     ),
   ];
-
   List<QuestionTemplateWidget> get questions =>
       widget.userType == 0 ? doctorQuestions : patientQuestions;
   @override
