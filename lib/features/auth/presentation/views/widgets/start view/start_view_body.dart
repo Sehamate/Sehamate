@@ -46,7 +46,7 @@ class _StartViewBodyState extends State<StartViewBody> {
                     Center(
                       child: Image.asset('assets/images/appLogo.png'),
                     ),
-                    SizedBox(height: 16),
+                    // SizedBox(height: 16),
                     GradientText(
                       "Your Own AI\nHealth Companion",
                       style: context.texts.titleMedium,
@@ -60,7 +60,7 @@ class _StartViewBodyState extends State<StartViewBody> {
                     ),
                     SizedBox(height: 60),
                     Image.asset('assets/images/robot.png'),
-                    SizedBox(height: 60),
+                    // SizedBox(height: 60),
                     Row(
                       spacing: 16,
                       children: [
