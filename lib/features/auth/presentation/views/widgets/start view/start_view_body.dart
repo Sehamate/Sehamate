@@ -148,6 +148,8 @@ class _StartViewBodyState extends State<StartViewBody> {
                         ),
                       ],
                     ),
+                    SizedBox(height: 16),
+
                     Text(
                       "© 2025 SehaMate. All Rights Reserved.",
                       textAlign: TextAlign.center,
