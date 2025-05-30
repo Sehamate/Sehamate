@@ -60,7 +60,7 @@ class _StartViewBodyState extends State<StartViewBody> {
                     ),
                     SizedBox(height: 60),
                     Image.asset('assets/images/robot.png'),
-                    // SizedBox(height: 60),
+                    SizedBox(height: 60),
                     Row(
                       spacing: 16,
                       children: [
@@ -148,20 +148,15 @@ class _StartViewBodyState extends State<StartViewBody> {
                         ),
                       ],
                     ),
+                    Text(
+                      "© 2025 SehaMate. All Rights Reserved.",
+                      textAlign: TextAlign.center,
+                      style: context.texts.bodySmall!.copyWith(
+                        color: Colors.grey.shade500,
+                      ),
+                    ),
                   ],
                 ),
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: 5,
-            left: 0,
-            right: 0,
-            child: Text(
-              "© 2025 SehaMate. All Rights Reserved.",
-              textAlign: TextAlign.center,
-              style: context.texts.bodySmall!.copyWith(
-                color: Colors.grey.shade500,
               ),
             ),
           ),
